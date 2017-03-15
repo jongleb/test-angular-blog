@@ -58,7 +58,7 @@ export class EventsComponent implements OnInit, OnDestroy {
   onViewDetail(data){
     this.store.dispatch(new ToogleModalAction({
       showed: true,
-      type: 'news-detail',
+      type: 'events-detail',
       data
     }))
   }
@@ -66,7 +66,7 @@ export class EventsComponent implements OnInit, OnDestroy {
   onClose(){
     this.store.dispatch(new ToogleModalAction({
       showed: false,
-      type: 'news-detail',
+      type: 'events-detail',
     }))
   }
 

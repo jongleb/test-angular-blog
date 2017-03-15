@@ -10,7 +10,7 @@
   </modal-header>
 
   <modal-content>
-    <img [src]="(modalState$ | async)?.data?.image">
+    <img [src]="(modalState$ | async)?.data?.image"/>
     {{(modalState$ | async)?.data?.description}}
   </modal-content>
 
@@ -33,7 +33,7 @@
     <div class="card-block">
       <h4 class="card-title">{{item.title}}</h4>
       <p class="card-text">{{item.description}}</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <button class="btn btn-primary" (click)="onViewDetail(item)">View</button>
     </div>
   </div>
 </div>
