@@ -24,8 +24,9 @@ export class NewsEffects {
   @Effect()
   fetchNews$: Observable<Action> = this.actions$
     .ofType(news.ActionTypes.FETCH_NEWS)
-    .switchMap(action => this.newsApi
-      .find()
+    .map(action => action.payload)
+    .switchMap(filter => this.newsApi
+      .find(filter)
       .map(res => {
         const items = {news: res};
         const schema = { news: [newsSchema] };

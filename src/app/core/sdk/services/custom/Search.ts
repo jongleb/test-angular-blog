@@ -34,7 +34,8 @@ export class SearchApi extends BaseLoopBackApi {
   /**
    * search data in common models
    *
-   * @param {string} query 
+   * @param {string} query
+   * @param {string} type
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -45,7 +46,7 @@ export class SearchApi extends BaseLoopBackApi {
    * This usually means the response is a `Search` object.)
    * </em>
    */
-  public search(query: any): Observable<any> {
+  public search(query: any, type: string): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/search";
@@ -53,6 +54,7 @@ export class SearchApi extends BaseLoopBackApi {
     let _postBody: any = {};
     let _urlParams: any = {};
     if (query) _urlParams.query = query;
+    if (type) _urlParams.query = type;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
     return result;
   }

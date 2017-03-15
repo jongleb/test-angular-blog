@@ -1,6 +1,7 @@
 import { Action } from '@ngrx/store';
 import {type} from '../../utils/ngrx-action.util';
 import {NewsInterface} from "../../sdk/models/News";
+import {LoopBackFilter} from "../../sdk/models/BaseModels";
 
 
 export const ActionTypes = {
@@ -11,6 +12,7 @@ export const ActionTypes = {
 
 export class FetchNewsAction implements Action {
   type = ActionTypes.FETCH_NEWS;
+  constructor(public payload?: LoopBackFilter){}
 }
 
 export class FetchNewsSuccessAction implements Action {

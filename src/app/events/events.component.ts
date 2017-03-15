@@ -27,8 +27,10 @@ export class EventsComponent implements OnInit {
   }
 
   onScroll(){
-    console.log('scroll');
     this.store.dispatch(new events.UpdateFilterAndfetchAction({skip: null}));
   }
 
+  onInputChange(data){
+    console.log(data);
+  }
 }

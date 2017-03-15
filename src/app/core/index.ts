@@ -4,6 +4,7 @@ import {CoreStoreModule} from './store/index';
 import {SDKBrowserModule} from "./sdk/index";
 import {NewsEffects} from "./effects/news.effects";
 import {EventsEffects} from "./effects/events.effects";
+import {Homeffects} from "./effects/home.effects";
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import {EventsEffects} from "./effects/events.effects";
     SDKBrowserModule.forRoot(),
     CoreStoreModule,
     EffectsModule.run(NewsEffects),
-    EffectsModule.run(EventsEffects)
+    EffectsModule.run(EventsEffects),
+    EffectsModule.run(Homeffects)
   ],
   declarations: [
   ],

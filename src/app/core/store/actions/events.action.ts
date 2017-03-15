@@ -37,13 +37,9 @@ export class FetchEventsFailAction implements Action {
   constructor(public payload: any){}
 }
 
-export class TESTAction implements Action {
-  type = type('[Events] RANDOM');
-}
 
 export type Actions = FetchEventsAction
   | FetchEventsSuccessAction
   | FetchEventsFailAction
   | UpdateFilterAndfetchAction
-  | ConcatEventsAction
-  |  TESTAction;
+  | ConcatEventsAction;
