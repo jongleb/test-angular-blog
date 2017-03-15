@@ -19,12 +19,16 @@ export class NewsComponent implements OnInit {
   public newsState$: Observable<NewsState> = this.store.select(getNewsState);
   public newsList$: Observable<NewsInterface[]> = this.store.select(getNewsList);
 
+  public searchStr: string = null;
 
   constructor(private store: Store<State>) {
-    this.newsList$.subscribe(n => console.log(n));
+
   }
 
   ngOnInit() {
     this.store.dispatch(new news.FetchNewsAction());
+  }
+  onInputChange(data){
+    this.searchStr = data;
   }
 }

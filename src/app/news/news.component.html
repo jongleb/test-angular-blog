@@ -1,5 +1,8 @@
-
-<core-simple-list [list]="newsList$ | async">
+<div class="row">
+  <core-search-box (onInputChange)="onInputChange($event)" ></core-search-box>
+</div>
+<core-simple-list [list]="(newsList$ | async)| search:
+       {searchStr: searchStr, searchProp: ['title', description]}">
   <simple-list-body-content>
     fdsdasf
   </simple-list-body-content>
