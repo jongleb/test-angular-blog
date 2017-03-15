@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  public show: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  changeShow(){
+    this.show = !this.show;
   }
 
 }

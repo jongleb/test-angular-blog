@@ -1,9 +1,11 @@
 <nav class="navbar navbar-light bg-faded rounded mb-3">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+  <button class="navbar-toggler" type="button"
+          (click)="changeShow()"
+          data-toggle="collapse" data-target="#navbarCollapse"
           aria-controls="navbarCollapse" aria-expanded="true" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="navbar-toggleable-md collapse show" id="navbarCollapse" aria-expanded="true">
+  <div class="navbar-toggleable-md collapse" [ngClass]="{show: show}" id="navbarCollapse" aria-expanded="true">
     <ul class="nav navbar-nav text-md-center justify-content-md-between">
       <li class="nav-item active">
         <a class="nav-link" [routerLink]="['/home']">Home <span class="sr-only">(current)</span></a>
