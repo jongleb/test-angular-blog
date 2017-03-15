@@ -29,6 +29,7 @@
     "core-js": "^2.4.1",
     "engine.io-client": "^2.1.0",
     "ngrx-store-freeze": "^0.1.9",
+    "ngx-modal": "0.0.29",
     "normalizr": "^3.2.2",
     "reselect": "^2.5.4",
     "rxjs": "^5.0.1",
