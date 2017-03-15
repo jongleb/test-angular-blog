@@ -9,6 +9,7 @@ import {HomeModule} from "./home/index";
 import {RouterModule} from "@angular/router";
 import {CoreModule} from "./core/index";
 import {APP_CORE_MODULES} from "./core/components/index";
+import {EventsModule} from "./events/index";
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import {APP_CORE_MODULES} from "./core/components/index";
     HttpModule,
     NewsModule,
     HomeModule,
+    EventsModule,
     CoreModule,
     RouterModule.forRoot([]),
     ...APP_CORE_MODULES

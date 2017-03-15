@@ -5,5 +5,5 @@ import {HomeComponent} from "./home.component";
 
 
 export const routing: ModuleWithProviders = RouterModule.forChild([
-  { path: 'events', component: HomeComponent }
+  { path: 'home', component: HomeComponent }
 ]);

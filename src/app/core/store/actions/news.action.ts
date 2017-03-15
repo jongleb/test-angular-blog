@@ -1,5 +1,6 @@
 import { Action } from '@ngrx/store';
 import {type} from '../../utils/ngrx-action.util';
+import {NewsInterface} from "../../sdk/models/News";
 
 
 export const ActionTypes = {
@@ -14,7 +15,7 @@ export class FetchNewsAction implements Action {
 
 export class FetchNewsSuccessAction implements Action {
   type = ActionTypes.FETCH_NEWS_SUCCESS;
-  constructor(public payload: any[]){}
+  constructor(public payload: any){}
 }
 
 export class FetchNewsFailAction implements Action {

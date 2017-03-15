@@ -1,20 +1,21 @@
 export interface EntitiesState {
-  issues: {},
-  repositories: {}
+  news: {},
+  events: {}
 }
 
 const initialState: EntitiesState = {
-  issues: {},
-  repositories: {}
+  news: {},
+  events: {}
 };
 
 export function entitiesReducer(state = initialState, action): EntitiesState {
 
   if (action.payload && action.payload.entities) {
+    console.log(action.payload);
     return Object.assign({}, state, action.payload.entities);
   }
   return state;
 }
 
-export const getIssuesEntities = (state: EntitiesState) => state.issues;
-export const getRepositories = (state: EntitiesState) => state.repositories;
+export const getNewsEntities = (state: EntitiesState) => state.news;
+export const getEventsEntities = (state: EntitiesState) => state.events;

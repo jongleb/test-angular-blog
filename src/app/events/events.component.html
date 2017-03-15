@@ -1,3 +1,15 @@
-<p>
-  events works!
-</p>
+<div class="row"  infinite-scroll
+     [infiniteScrollDistance]="2"
+     [infiniteScrollThrottle]="300"
+     (scrolled)="onScroll()">
+  <div class="card col-md-4"
+       style="width: 20rem;"
+       *ngFor="let item of (eventsList$ | async)">
+    <img class="card-img-top" [src]="item.image" alt="Card image cap">
+    <div class="card-block">
+      <h4 class="card-title">{{item.title}}</h4>
+      <p class="card-text">{{item.description}}</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+</div>
