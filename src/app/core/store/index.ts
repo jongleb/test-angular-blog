@@ -15,6 +15,7 @@ import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import * as fromEntities from './reducers/entities';
 import * as fromNews from './reducers/news';
 import * as fromEvents from './reducers/events';
+import * as fromModal from './reducers/modal';
 
 import {mapCollectionToArrayKeys} from '../utils/reducer-util';
 
@@ -22,13 +23,15 @@ import {mapCollectionToArrayKeys} from '../utils/reducer-util';
 export interface State {
   entities: fromEntities.EntitiesState,
   events: fromEvents.EventsState,
-  news: fromNews.NewsState
+  news: fromNews.NewsState,
+  modal: fromModal.ModalState
 }
 
 const reducers = {
   entities: fromEntities.entitiesReducer,
   news: fromNews.newsReducer,
-  events: fromEvents.eventsReducer
+  events: fromEvents.eventsReducer,
+  modal: fromModal.modalReducer
 };
 
 const developmentReducer: ActionReducer<State> = compose(storeFreeze, combineReducers)(reducers);
@@ -58,6 +61,7 @@ export const getState = (state: State) => state;
 export const getEntitiesState = (state: State) => state.entities;
 export const getNewsState = (state: State) => state.news;
 export const getEventsState = (state: State) => state.events;
+export const getModalState = (state: State) => state.modal;
 
 export const getNewsEntities = createSelector(getEntitiesState, fromEntities.getNewsEntities);
 export const getEventsEntities = createSelector(getEntitiesState, fromEntities.getEventsEntities);

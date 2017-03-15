@@ -1,4 +1,4 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'simple-list-body-content',
@@ -20,6 +20,13 @@ export class SimpleListComponent implements OnInit {
 
   @Input()
   public size: string = 'col-lg-4';
+
+  @Output()
+  public onViewDetail: EventEmitter<any> = new EventEmitter();
+
+  viewDetail(item){
+    this.onViewDetail.emit(item);
+  }
 
   constructor() { }
 

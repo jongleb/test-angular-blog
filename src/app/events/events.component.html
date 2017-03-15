@@ -1,3 +1,24 @@
+<modal
+  #modal
+  cancelButtonLabel="cancel"
+  submitButtonLabel="submit"
+  [hideCloseButton]="true"
+  (onClose)="onClose()"
+  modalClass="modal-lg modal-sm any-other-css-class">
+  <modal-header>
+    <h4> {{(modalState$ | async)?.data?.title}}</h4>
+  </modal-header>
+
+  <modal-content>
+    <img [src]="(modalState$ | async)?.data?.image">
+    {{(modalState$ | async)?.data?.description}}
+  </modal-content>
+
+  <modal-footer>
+
+  </modal-footer>
+
+</modal>
 <div class="row">
   <core-search-box (onInputChange)="onInputChange($event)" ></core-search-box>
 </div>

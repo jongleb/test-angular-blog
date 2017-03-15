@@ -7,6 +7,7 @@ import {BrowserModule} from "@angular/platform-browser";
 import {SearchBoxModule} from "../core/components/search-box/index";
 import {CoreModule} from "../core/index";
 
+import {ModalModule} from "ngx-modal";
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import {CoreModule} from "../core/index";
     CoreModule,
     BrowserModule,
     SearchBoxModule,
+    ModalModule,
     SimpleListModule
   ],
   declarations: [
