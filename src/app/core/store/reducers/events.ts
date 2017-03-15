@@ -1,4 +1,6 @@
 import * as events from '../actions/events.action';
+import * as common from '../actions/common.action';
+
 import {LoopBackFilter} from "../../sdk/models/BaseModels";
 
 export interface EventsState {
@@ -46,6 +48,9 @@ export function eventsReducer(state = initialState, action): EventsState {
     }
     case events.ActionTypes.FETCH_EVENT_FAIL: {
       return Object.assign({}, state, {err: action.payload})
+    }
+    case common.ActionTypes.TO_INITIAL: {
+      return Object.assign({}, initialState)
     }
     default: {
       return state;
