@@ -5,6 +5,7 @@ import {SDKBrowserModule} from "./sdk/index";
 import {NewsEffects} from "./effects/news.effects";
 import {EventsEffects} from "./effects/events.effects";
 import {Homeffects} from "./effects/home.effects";
+import {CORE_PIPES} from "./pipes/index";
 
 
 @NgModule({
@@ -16,9 +17,11 @@ import {Homeffects} from "./effects/home.effects";
     EffectsModule.run(Homeffects)
   ],
   declarations: [
+    ...CORE_PIPES
   ],
   exports: [
-    CoreStoreModule
+    CoreStoreModule,
+    ...CORE_PIPES
   ],
   providers: [
   ]

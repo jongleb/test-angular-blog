@@ -37,7 +37,6 @@ export class FetchEventsFailAction implements Action {
   constructor(public payload: any){}
 }
 
-
 export type Actions = FetchEventsAction
   | FetchEventsSuccessAction
   | FetchEventsFailAction

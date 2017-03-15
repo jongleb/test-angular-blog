@@ -17,6 +17,7 @@ export class EventsComponent implements OnInit {
   public eventsState$: Observable<EventsState> = this.store.select(getEventsState);
   public eventsList$: Observable<EventsInterface[]> = this.store.select(getEventsList);
 
+  public searchStr: string = null;
 
   constructor(private store: Store<State>) {
     this.eventsList$.subscribe(n => console.log(n));
@@ -31,6 +32,6 @@ export class EventsComponent implements OnInit {
   }
 
   onInputChange(data){
-    console.log(data);
+    this.searchStr = data;
   }
 }
